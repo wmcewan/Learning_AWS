@@ -1,0 +1,11 @@
+AWSTemplateFormatVersion: 2010-09-09
+
+Resources:
+  LinuxWorkspace:
+    Type: AWS::WorkSpaces::Workspace
+    Properties: 
+      BundleId: wsb-1pmf981rx
+      DirectoryId: d-9067045e1b
+      UserName: wmcewan2
+      WorkspaceProperties: 
+        RunningMode: AUTO_STOP

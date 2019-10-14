@@ -1,0 +1,23 @@
+AWSTemplateFormatVersion: 2010-09-09
+
+Resources:
+  FiveDollBudget:
+    Type: AWS::Budgets::Budget
+    Properties:   
+      Budget: 
+        BudgetLimit: 
+          Amount: 5
+          Unit: USD
+        BudgetName: FiveDollarBudget
+        BudgetType: COST
+        TimeUnit: MONTHLY  
+      NotificationsWithSubscribers:
+        - Notification: 
+            ComparisonOperator: EQUAL_TO
+            NotificationType: ACTUAL
+            Threshold: 100
+            ThresholdType: PERCENTAGE
+          Subscribers: 
+            - Address: william.mcewan@gmail.com
+              SubscriptionType: EMAIL
+          
